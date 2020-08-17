@@ -91,7 +91,8 @@ GET 127.0.0.1/mytest/doc/_search
 terms桶在进行分组时，会爲此field中的每种值创建一个新的桶  
 要注意此 "terms桶" 和平常用在主查询query中的 "查找terms" 是不同的东西  
 
-+ 具体实例  
++ 具体实例 
+
   首先插入几笔数据，其中color是一个keyword类型
 
 ```
@@ -148,6 +149,7 @@ bucket和bucket间是独立的，也就是说一个文档可以同时符合好�
 ```
 
 + 具体实例二
+
   将terms桶搭配度量指标(avg、min、max、sum...)一起使用  
   其实度量指标也可以看成一种"桶"，他可以和其他正常的桶们进行嵌套作用，差别只在指标关注的是这些文档中的某个数值的统计，而桶关注的是文档  
   首先准备数据，color一样为keyword类型，而price为integer类型
@@ -238,6 +240,7 @@ GET 127.0.0.1/mytest/doc/_search
 因为filter桶毕竟还是一个聚合桶，因此他可以和别的桶进行嵌套，但他不是依附在别的桶上  
 
 + 具体实例
+
   取得color为red或是blue的文档
 
 ```
@@ -274,6 +277,7 @@ GET 127.0.0.1/mytest/doc/_search
 ```
 
 + 具体实例二
+
   filter桶和terms桶嵌套使用，先过滤出color为red以及blue的文档，再对这些文档进行color分组
 
 ```
@@ -344,6 +348,7 @@ sort : 设置返回的hits的排序
 _source : 设置返回的字段
 
 + 具体实例
+
   首先准备数据，color是keyword类型
 
 ```
@@ -440,6 +445,7 @@ _count : 按照文档数排序
 _key : 按照每个桶的字符串值的字母顺序排序  
 
 + 具体实例
+
   准备数据，color是keyword类型
 
 ```
