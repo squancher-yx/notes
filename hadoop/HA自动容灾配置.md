@@ -77,11 +77,13 @@ $>yarn rmadmin -getServiceState rm1
 //切换状态到standby  
 ```
 $>yarn rmadmin -transitionToStandby rm1  
- ```
+```
 3. 启动yarn集群  
+```
 $>start-yarn.sh  
+```
  
 4. **hadoop没有启动两个resourcemanager,需要手动启动另外一个**  
 ```
 $>yarn-daemon.sh start resourcemanager  
- ```
+```
