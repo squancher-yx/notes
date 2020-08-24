@@ -97,3 +97,12 @@
     配置 conf/backup-master  
     官方文档：  
     http://hbase.apache.org/book.html#quickstart_pseudo
+
+**hbase基于hdfs**
+
+相同列族的数据存放在一个文件中。  
+[表数据的存储目录结构构成]  
+hdfs://s201:8020/hbase/data/${名字空间}/${表名}/${区域名称}/${列族名称}/${文件名}  
+<br>
+[WAL目录结构构成]  
+hdfs://s201:8020/hbase/WALs/${区域服务器名称,主机名,端口号,时间戳}/  
